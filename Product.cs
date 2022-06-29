@@ -21,7 +21,7 @@ namespace csharp_oop_shop
             this.descrizione = description;
             this.iva = iva;
             Random rand = new Random();
-            this.Codice = rand.Next(1, 99999999);
+            this.Codice = rand.Next(1, 99);
         }
 
         public double GetBasicPrice()
@@ -38,9 +38,22 @@ namespace csharp_oop_shop
 
         public string GetFullName()
         {
-            string fullName = this.nome + " " + "codice: " + this.Codice;
+            string fullName = this.nome + " - " + this.Codice;
 
             return fullName;
+        }
+
+        public string FormatProductCode()
+        {
+            string baseCode = this.Codice.ToString();
+            string formattedCode = baseCode;
+
+            while (formattedCode.Length < 8)
+            {
+                formattedCode = "0" + formattedCode;
+            }
+
+            return formattedCode;
         }
     }
 }

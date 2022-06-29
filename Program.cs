@@ -8,3 +8,6 @@ Console.WriteLine(myProduct.descrizione);
 
 Console.WriteLine(myProduct.GetBasicPrice());
 Console.WriteLine(myProduct.GetPriceAfterIva());
+Console.WriteLine(myProduct.GetFullName());
+
+Console.WriteLine(myProduct.FormatProductCode());
